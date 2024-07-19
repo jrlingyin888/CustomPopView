@@ -8,11 +8,11 @@
 import UIKit
 
 enum PopoverViewArrowDirection : Int {
-    //箭头位置
-    case up = 1    //上中
-    case down = 2  //下中
-    case left = 3  //左中
-    case right = 4 //右中
+    //Arrow position
+    case up = 1
+    case down = 2
+    case left = 3
+    case right = 4
 }
 
 
@@ -22,8 +22,8 @@ class PopoverView: UIView {
     
     private var _arrowOrigin:CGPoint = CGPoint.zero
     
-    private var _padding_h:CGFloat = 10.0               //横向间距
-    private var _padding_v:CGFloat = 50.0               //竖向间距
+    private var _padding_h:CGFloat = 10.0               //Lateral spacing
+    private var _padding_v:CGFloat = 50.0               //Vertical spacing
     
     private var _arrowWidth:CGFloat = 15.0              //defatult
     private var _arrowHeight:CGFloat = 10.0             //defatult
@@ -32,11 +32,11 @@ class PopoverView: UIView {
     private var _contentHeight:CGFloat = CGFloat.zero
     private var _direction:PopoverViewArrowDirection = .up
     
-    //可传入目标视图
+    //Can be passed to the target view
     init(targetView tarView:UIView,contentWidth contentW:CGFloat,contentHeight contentH:CGFloat,arrowDirection direction:PopoverViewArrowDirection) {
         super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         
-        //计算出目标视图在全屏中的原点位置
+        //Calculate the origin position of the target view in the full screen
         var pointInScreenView = CGPoint.zero
         if let superview = tarView.superview {
             let pointInWindow = superview.convert(tarView.frame.origin, to: nil)
@@ -52,7 +52,7 @@ class PopoverView: UIView {
         setupView()
     }
     
-    //可传入原始坐标
+    //The original coordinates can be passed in
     init(arrowOrigin origin:CGPoint,contentWidth contentW:CGFloat,contentHeight contentH:CGFloat,arrowDirection direction:PopoverViewArrowDirection) {
         super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         
@@ -75,27 +75,31 @@ class PopoverView: UIView {
     }
     
     func setupView(){
-        //背景颜色为无色
         backgroundColor = UIColor.clear
         
-        //这里会判断视图的宽高是否已经超出屏幕了，如超出则做出相应的处理
+        /**
+         
+         it will determine whether the width and height of the view have exceeded the screen,
+         and if they have, it will be processed accordingly
+         
+         */
         if _contentWidth >= UIScreen.main.bounds.width {
-            _contentWidth = UIScreen.main.bounds.width - 20  //这里可自定义超出屏幕做多少的处理
+            _contentWidth = UIScreen.main.bounds.width - 20     //you can customize how much processing goes beyond the screen
         }
         if _contentHeight >= UIScreen.main.bounds.height {
-            _contentHeight = UIScreen.main.bounds.height - 100  //这里可自定义超出屏幕做多少的处理
+            _contentHeight = UIScreen.main.bounds.height - 100  //You can customize how much processing goes beyond the screen
         }
         
         backView = UIView(frame: CGRect(x: _arrowOrigin.x, y: _arrowOrigin.y + _arrowHeight, width: _contentWidth, height: _contentHeight))
         backView?.center.x = _arrowOrigin.x
         
-        backView?.layer.cornerRadius = 11  //设置圆角
-        backView!.backgroundColor = .purple //内容背景色
+        backView?.layer.cornerRadius = 11
+        backView!.backgroundColor = .purple
         
         addSubview(backView!)
     }
     
-    //设置对应方向的箭头原点位置
+    //Set the origin position of the arrow in the corresponding direction
     private func arrowOriginWithTargetView(_ tarView:UIView,_ originPoint:CGPoint,_ direction:PopoverViewArrowDirection) -> CGPoint{
         var currentArrowOriginPoint:CGPoint = CGPointZero
         
@@ -185,7 +189,7 @@ class PopoverView: UIView {
             _backView.frame = CGRect(x: _arrowOrigin.x, y: _arrowOrigin.y + _arrowHeight, width: _contentWidth, height: _contentHeight)
             _backView.center.x = _arrowOrigin.x
             
-            //判断backView是否超出屏幕，如何超出屏幕左边则设置backiew的左边距 10，同样如果超出右边屏幕，则 backView 的右边距 10
+            //To determine whether backView is beyond the screen, how to go beyond the left side of the screen, set the left margin of backiew 10, and if it goes beyond the right side of the screen, set the right margin of backView 10
             if _backView.frame.origin.x < _padding_h {
                 _backView.frame.origin.x = _padding_h
             }
@@ -197,7 +201,7 @@ class PopoverView: UIView {
             _backView.frame = CGRect(x: _arrowOrigin.x, y: _arrowOrigin.y - _arrowHeight - _contentHeight, width: _contentWidth, height: _contentHeight)
             _backView.center.x = _arrowOrigin.x
             
-            //判断backView是否超出屏幕，如何超出屏幕左边则设置backiew的左边距 10，同样如果超出右边屏幕，则 backView 的右边距 10
+            //Id.
             if _backView.frame.origin.x < _padding_h {
                 _backView.frame.origin.x = _padding_h
             }
@@ -210,7 +214,7 @@ class PopoverView: UIView {
             _backView.frame = CGRect(x: _arrowOrigin.x + _arrowHeight, y: _arrowOrigin.y, width: _contentWidth, height: _contentHeight)
             _backView.center.y = _arrowOrigin.y
             
-            //判断backView是否超出屏幕，如何超出屏幕上边则设置backiew的上边距 50，同样如果超出下边屏幕，则 backView 的下边距 50
+            //To determine whether backView is beyond the screen, how to go beyond the top of the screen, set the top margin of backiew 50, and if it goes beyond the bottom screen, set the bottom margin of backView 50
             if _backView.frame.origin.y <= _padding_v {
                 _backView.frame.origin.y = _padding_v
             }
@@ -222,7 +226,7 @@ class PopoverView: UIView {
             _backView.frame = CGRect(x: _arrowOrigin.x - _arrowHeight - _contentWidth, y: _arrowOrigin.y, width: _contentWidth, height: _contentHeight)
             _backView.center.y = _arrowOrigin.y
             
-            //判断backView是否超出屏幕，如何超出屏幕上边则设置backiew的上边距 50，同样如果超出下边屏幕，则 backView 的下边距 50
+            //Id.
             if _backView.frame.origin.y <= _padding_v {
                 _backView.frame.origin.y = _padding_v
             }
@@ -235,6 +239,11 @@ class PopoverView: UIView {
     
     func setArrowX(_ x:CGFloat) {
         self._arrowOrigin.x = x
+        self.setNeedsLayout()
+    }
+    
+    func setArrowY(_ y:CGFloat) {
+        self._arrowOrigin.y = y
         self.setNeedsLayout()
     }
 }
@@ -255,7 +264,6 @@ extension PopoverView {
             window.addSubview(self)
         }
       
-        //动画效果弹出
         alpha = 0
 
         _backView.frame = CGRect(x: _arrowOrigin.x, y: _arrowOrigin.y + _arrowHeight, width: 0, height: 0)
@@ -278,8 +286,7 @@ extension PopoverView {
         for view in result {
             view.removeFromSuperview()
         }
-        
-             //动画效果淡出
+
         UIView.animate(withDuration: 0.2, animations: { [weak self] in
             self?.alpha = 0
             _backView.frame = CGRect(x: self!._arrowOrigin.x, y: self!._arrowOrigin.y, width: 0, height: 0)
