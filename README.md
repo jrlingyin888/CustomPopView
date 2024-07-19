@@ -9,6 +9,11 @@ The prompt window with arrows can set the origin position of arrows, and can aut
 https://github.com/user-attachments/assets/9baa651a-461d-4ed5-ac6a-cc71986429c7
 
 ## 使用
+* 项目里把PopoverView文件拖进入自己的项目里即可使用
+  
+  ![1721373890761](https://github.com/user-attachments/assets/d937c35c-61ca-486a-88de-63ecf8d77210)
+
+
 * 先设置一个 Button
 
         let btn = UIButton(frame: CGRect(x: 30, y: 100, width: 100, height: 50))
