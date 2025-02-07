@@ -17,21 +17,29 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2. 选择Xcode版本
+      # 2. 检查并选择Xcode版本
       - name: Select Xcode
         run: |
-          sudo xcode-select -s /Applications/Xcode.app
+          sudo xcode-select -p
+          sudo xcode-select -s /Applications/Xcode_16.1.app
+          xcodebuild -version
 
-      # 3. 构建和测试项目
+      # 3. 列出可用的scheme
+      - name: List Schemes
+        run: |
+          xcodebuild -project "$PROJECT_NAME.xcodeproj" -list
+
+      # 4. 构建和测试项目
       - name: Build and Test
         run: |
-          xcodebuild test \
+          xcodebuild clean test \
           -project "$PROJECT_NAME.xcodeproj" \
           -scheme "$PROJECT_NAME" \
           -destination "platform=iOS Simulator,name=iPhone 15 Pro" \
-          -enableCodeCoverage YES
+          -enableCodeCoverage YES \
+          -showBuildSettings
 
-      # 4. 可选：输出测试结果
+      # 5. 可选：输出测试结果
       - name: Upload test results
         if: success() || failure()
         uses: actions/upload-artifact@v4
