@@ -19,7 +19,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5721E5792D5659AC00BBEE68"
+               BlueprintIdentifier = "C46C46362D56104F00C5FAED"
                BuildableName = "CustomPopWindowTests.xctest"
                BlueprintName = "CustomPopWindowTests"
                ReferencedContainer = "container:CustomPopWindow.xcodeproj">
