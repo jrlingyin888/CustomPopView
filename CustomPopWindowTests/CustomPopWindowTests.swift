@@ -2,7 +2,7 @@
 //  CustomPopWindowTests.swift
 //  CustomPopWindowTests
 //
-//  Created by jr on 2025/2/7.
+//  Created by JunRong Huang on 2025/2/7.
 //
 
 import XCTest
