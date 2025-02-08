@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,7 +16,18 @@
 		C4B7BEDA2C4909FC003364F8 /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B7BED92C4909FC003364F8 /* PopoverView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C46C463B2D56104F00C5FAED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4B7BEB92C48FB4D003364F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4B7BEC02C48FB4D003364F8;
+			remoteInfo = CustomPopWindow;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		C46C46372D56104F00C5FAED /* CustomPopWindowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomPopWindowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4B7BEC12C48FB4D003364F8 /* CustomPopWindow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomPopWindow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4B7BEC42C48FB4D003364F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4B7BEC62C48FB4D003364F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,7 +39,18 @@
 		C4B7BED92C4909FC003364F8 /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		C46C46382D56104F00C5FAED /* CustomPopWindowTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CustomPopWindowTests; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
+		C46C46342D56104F00C5FAED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C4B7BEBE2C48FB4D003364F8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -43,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				C4B7BEC32C48FB4D003364F8 /* CustomPopWindow */,
+				C46C46382D56104F00C5FAED /* CustomPopWindowTests */,
 				C4B7BEC22C48FB4D003364F8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				C4B7BEC12C48FB4D003364F8 /* CustomPopWindow.app */,
+				C46C46372D56104F00C5FAED /* CustomPopWindowTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,6 +105,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C46C46362D56104F00C5FAED /* CustomPopWindowTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C46C463F2D56104F00C5FAED /* Build configuration list for PBXNativeTarget "CustomPopWindowTests" */;
+			buildPhases = (
+				C46C46332D56104F00C5FAED /* Sources */,
+				C46C46342D56104F00C5FAED /* Frameworks */,
+				C46C46352D56104F00C5FAED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C46C463C2D56104F00C5FAED /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C46C46382D56104F00C5FAED /* CustomPopWindowTests */,
+			);
+			name = CustomPopWindowTests;
+			packageProductDependencies = (
+			);
+			productName = CustomPopWindowTests;
+			productReference = C46C46372D56104F00C5FAED /* CustomPopWindowTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		C4B7BEC02C48FB4D003364F8 /* CustomPopWindow */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C4B7BED52C48FB4F003364F8 /* Build configuration list for PBXNativeTarget "CustomPopWindow" */;
@@ -105,9 +152,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1520;
+				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
+					C46C46362D56104F00C5FAED = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = C4B7BEC02C48FB4D003364F8;
+					};
 					C4B7BEC02C48FB4D003364F8 = {
 						CreatedOnToolsVersion = 15.2;
 					};
@@ -127,11 +178,19 @@
 			projectRoot = "";
 			targets = (
 				C4B7BEC02C48FB4D003364F8 /* CustomPopWindow */,
+				C46C46362D56104F00C5FAED /* CustomPopWindowTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C46C46352D56104F00C5FAED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C4B7BEBF2C48FB4D003364F8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -145,6 +204,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C46C46332D56104F00C5FAED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C4B7BEBD2C48FB4D003364F8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -157,6 +223,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C46C463C2D56104F00C5FAED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4B7BEC02C48FB4D003364F8 /* CustomPopWindow */;
+			targetProxy = C46C463B2D56104F00C5FAED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C4B7BECA2C48FB4D003364F8 /* Main.storyboard */ = {
@@ -178,6 +252,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C46C463D2D56104F00C5FAED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KR42D74ZCX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scdl.xyz.CustomPopWindowTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CustomPopWindow.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CustomPopWindow";
+			};
+			name = Debug;
+		};
+		C46C463E2D56104F00C5FAED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KR42D74ZCX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scdl.xyz.CustomPopWindowTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CustomPopWindow.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CustomPopWindow";
+			};
+			name = Release;
+		};
 		C4B7BED32C48FB4F003364F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -356,6 +468,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C46C463F2D56104F00C5FAED /* Build configuration list for PBXNativeTarget "CustomPopWindowTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C46C463D2D56104F00C5FAED /* Debug */,
+				C46C463E2D56104F00C5FAED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C4B7BEBC2C48FB4D003364F8 /* Build configuration list for PBXProject "CustomPopWindow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
